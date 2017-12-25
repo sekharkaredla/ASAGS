@@ -1,0 +1,12 @@
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+
+ln -s /usr/local/lib/python2.7/site-packages/cv2.so /usr/local/lib/python2.7/site-packages/cv.py ~/envs/lib/python2.7/site-packages
+
+ln -s /usr/local/lib/python2.7/site-packages/opencv3.pth /Users/roshni/Desktop/projenv/lib/python2.7/site-packages
+
+/Users/roshni/miniconda2/envs/bob_py2/
+
+/Users/roshni/miniconda2/envs/bob_py2/lib/python2.7/site-packages
+
+ln -s /usr/local/lib/python2.7/site-packages/opencv3.pth /Users/roshni/Desktop/projenv/lib/python2.7/site-packages

@@ -1,0 +1,23 @@
+optimal flow original code
+http://people.csail.mit.edu/celiu/OpticalFlow/
+
+optimal flow python code
+https://pypi.python.org/pypi/xbob.optflow.liu/1.1.0
+http://pythonhosted.org/bob.ip.optflow.liu/guide.html
+
+these two links are for optical flow c++ written packages in python
+
+
+cppimport
+https://github.com/tbenthompson/cppimport
+
+
+optimal flows environment installation (bob installation)
+https://www.idiap.ch/software/bob/docs/bob/bob/stable/install.html
+
+optimal flow after bob installation (use this)
+http://pythonhosted.org/bob.ip.optflow.liu/guide.html
+
+conda install opencv
+
+conda install openblas=0.2.19
