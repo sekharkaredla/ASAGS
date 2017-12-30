@@ -18,7 +18,8 @@ para = [alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIteration
 while True:
 	#cv2.imshow('temp1',frame1)
 	#cv2.imshow('temp2',frame2)
-	(vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2)
-	cv2.imshow('temp',vx)
+	(vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
+	cv2.imshow('temp1',vx)
+	cv2.imshow('temp2',vy)
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break

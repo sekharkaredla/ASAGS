@@ -21,3 +21,7 @@ http://pythonhosted.org/bob.ip.optflow.liu/guide.html
 conda install opencv
 
 conda install openblas=0.2.19
+
+
+image resizing
+https://www.pyimagesearch.com/2014/01/20/basic-image-manipulations-in-python-and-opencv-resizing-scaling-rotating-and-cropping/
