@@ -6,9 +6,10 @@ import bob.ip.optflow.liu.sor
 def getFrameResized(cap):
     ret , frame = cap.read()
     frame = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-    rescale = 100.0/(frame.shape[1])
+    size = 200
+    rescale = float(size)/(frame.shape[1])
     if rescale<0.8:
-        dim = (100, int(frame.shape[0] * rescale))
+        dim = (size, int(frame.shape[0] * rescale))
         frame = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
     return frame
 
@@ -20,6 +21,7 @@ def calculateOpticalFLow(frame1,frame2):
     nInnerFPIterations = 1
     nSORIterations = 30
     (vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
+    cv2.imshow('cam',frame1)
     cv2.imshow('vx',vx)
     cv2.imshow('vy',vy)
 
