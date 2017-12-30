@@ -1,3 +1,13 @@
+opencv in macOS
+https://www.pyimagesearch.com/2016/12/19/install-opencv-3-on-macos-with-homebrew-the-easy-way/
+
+opencv in virtualenv
+https://stackoverflow.com/questions/19155603/can-opencv-be-installed-in-python-virtualenv-on-mac-mountain-lion
+
+
+
+
+
 optimal flow original code
 http://people.csail.mit.edu/celiu/OpticalFlow/
 
