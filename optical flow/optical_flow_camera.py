@@ -14,13 +14,15 @@ def getFrameResized(cap):
     return frame
 
 def calculateOpticalFLow(frame1,frame2):
+    #dont use parameters for visualizations
     alpha = 0.0026
     ratio = 0.6
     minWidth = 20
     nOuterFPIterations = 7
     nInnerFPIterations = 1
     nSORIterations = 30
-    (vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
+    #(vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
+    (vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2)
     cv2.imshow('cam',frame1)
     cv2.imshow('vx',vx)
     cv2.imshow('vy',vy)

@@ -33,7 +33,13 @@ def resize_frame(frame):
         dim = (100, int(frame.shape[0] * rescale))
         frame = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
     return frame
-
+#dont use parameters for visualizations
+alpha = 0.0026
+ratio = 0.6
+minWidth = 20
+nOuterFPIterations = 7
+nInnerFPIterations = 1
+nSORIterations = 30
 
 #getFrameFromIndex(50)
 for each_frame_index in range(3,total_frames - FRAME_GAP - 5,FRAME_GAP):
@@ -48,16 +54,10 @@ for each_frame_index in range(3,total_frames - FRAME_GAP - 5,FRAME_GAP):
 
     # print PREV_F,CURRENT_F,NEXT_F
 
-    alpha = 0.0026
-    ratio = 0.6
-    minWidth = 20
-    nOuterFPIterations = 7
-    nInnerFPIterations = 1
-    nSORIterations = 30
-
-    (vx1,vy1,w1) = bob.ip.optflow.liu.sor.flow(PREV_F,CURRENT_F,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
-    (vx2,vy2,w2) = bob.ip.optflow.liu.sor.flow(CURRENT_F,NEXT_F,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
-
+    #(vx1,vy1,w1) = bob.ip.optflow.liu.sor.flow(PREV_F,CURRENT_F,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
+    #(vx2,vy2,w2) = bob.ip.optflow.liu.sor.flow(CURRENT_F,NEXT_F,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
+    (vx1,vy1,w1) = bob.ip.optflow.liu.sor.flow(PREV_F,CURRENT_F)
+    (vx2,vy2,w2) = bob.ip.optflow.liu.sor.flow(CURRENT_F,NEXT_F)
     cv2.imwrite('testVideo_'+str(each_frame_index)+'vx1.jpg',vx1)
     cv2.imwrite('testVideo_'+str(each_frame_index)+'vx2.jpg',vx2)
     cv2.imwrite('testVideo_'+str(each_frame_index)+'vy1.jpg',vy1)

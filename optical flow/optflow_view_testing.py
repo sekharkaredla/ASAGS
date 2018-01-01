@@ -8,6 +8,7 @@ frame1 = cv2.cvtColor(frame1,cv2.COLOR_BGR2GRAY)
 frame2 = cv2.cvtColor(frame2,cv2.COLOR_BGR2GRAY)
 # frame1 = float(frame1)
 # frame2 = float(frame2)
+#dont use parameters for visualizations
 alpha = 0.0026
 ratio = 0.6
 minWidth = 20
@@ -18,7 +19,8 @@ para = [alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIteration
 while True:
 	#cv2.imshow('temp1',frame1)
 	#cv2.imshow('temp2',frame2)
-	(vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
+	#(vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
+	(vx,vy,warpI2) = bob.ip.optflow.liu.sor.flow(frame1,frame2)
 	cv2.imshow('temp1',vx)
 	cv2.imshow('temp2',vy)
 	if cv2.waitKey(1) & 0xFF == ord('q'):
