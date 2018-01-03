@@ -51,3 +51,8 @@ class PreProcess:
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
+
+    def getFramesFromCamera(self):
+        ret , frame = self.cap.read()
+        frame = self.resize_frame(cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY))
+        return frame

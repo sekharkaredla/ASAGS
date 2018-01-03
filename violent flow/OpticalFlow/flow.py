@@ -11,6 +11,6 @@ class OptFlow:
         self.flows = ()
 
     def sorFlow(self,frame1,frame2):
-        #(vx,vy,w) = bob.ip.optflow.liu.sor.flow(frame1,frame2,self.alpha,self.ratio,self.minWidth,self.nOuterFPIterations,self.nInnerFPIterations,self.nSORIterations)
+        #self.flows = bob.ip.optflow.liu.sor.flow(frame1,frame2,self.alpha,self.ratio,self.minWidth,self.nOuterFPIterations,self.nInnerFPIterations,self.nSORIterations)
         self.flows = bob.ip.optflow.liu.sor.flow(frame1,frame2)
         return self.flows
