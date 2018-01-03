@@ -7,8 +7,8 @@ flow = OptFlow()
 vid.useCamera()
 vid.setVideoDimension(300)
 while True:
-	frame1 = vid.getFramesFromCamera()
-	frame2 = vid.getFramesFromCamera()
+	frame1 = vid.getFramesFromSource()
+	frame2 = vid.getFramesFromSource()
 	(vx,vy,w) = flow.sorFlow(frame1,frame2)
 
 	cv2.imshow('camera',frame2)

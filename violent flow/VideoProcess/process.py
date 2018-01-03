@@ -18,10 +18,10 @@ class PreProcess:
         self.dim = 100
 
     def read_video(self,video_name):
-        self.cap = cv2.VideoCapture('vio_1.avi')
-        self.total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        self.fps = cap.get(cv2.CAP_PROP_FPS)
-        self.time = total_frames / fps
+        self.cap = cv2.VideoCapture(video_name)
+        self.total_frames = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        self.fps = self.cap.get(cv2.CAP_PROP_FPS)
+        self.time = self.total_frames / self.fps
 
     def getFrameFromIndex(self,frame_no):
         #Number 2 defines flag CV_CAP_PROP_POS_FRAMES which is a 0-based index of the frame to be decoded/captured next.
@@ -52,7 +52,7 @@ class PreProcess:
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
 
-    def getFramesFromCamera(self):
+    def getFramesFromSource(self):
         ret , frame = self.cap.read()
         frame = self.resize_frame(cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY))
         return frame
