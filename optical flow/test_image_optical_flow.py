@@ -20,6 +20,8 @@ frame1 = resize_frame(cv2.cvtColor(frame1,cv2.COLOR_BGR2GRAY))
 frame2 = resize_frame(cv2.cvtColor(frame2,cv2.COLOR_BGR2GRAY))
 #(u,v,w) = bob.ip.optflow.liu.sor.flow(frame1,frame2,alpha,ratio,minWidth,nOuterFPIterations,nInnerFPIterations,nSORIterations)
 (u,v,w) = bob.ip.optflow.liu.sor.flow(frame1,frame2)
+print u
+print v
 cv2.imwrite('car_opt_flow.jpg',u)
 while True:
 	cv2.imshow('frame1',frame1)
