@@ -8,8 +8,10 @@ vid.read_video('vio_1.avi')
 flow = OptFlow()
 vid.setVideoDimension(100)
 
-
+index = 0
 for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_GAP):
+    index = index + 1
+
     PREV_F = vid.getFrameFromIndex(each_frame_index)
     CURRENT_F = vid.getFrameFromIndex(each_frame_index + vid.MOVEMENT_INTERVAL)
     NEXT_F = vid.getFrameFromIndex(each_frame_index + (2 * vid.MOVEMENT_INTERVAL))
@@ -27,8 +29,10 @@ for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_G
 #    print m1
 #    print m2
 
+#the below part is different in tal hassner's implementation
+
     change_mag = abs(m2-m1)
     binary_mag = np.ones(change_mag.shape,dtype=np.int)
     threshold = np.mean(change_mag , dtype=np.float64)
-    binary_mag=np.where(change_mag <=  threshold,0,binary_mag)
+    binary_mag = np.where(change_mag <=  threshold,0,binary_mag)
     print threshold,binary_mag
