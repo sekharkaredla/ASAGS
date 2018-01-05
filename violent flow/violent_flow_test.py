@@ -32,7 +32,7 @@ for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_G
 #the below part is different in tal hassner's implementation
 
     change_mag = abs(m2-m1)
-    binary_mag = np.ones(change_mag.shape,dtype=np.int)
+    binary_mag = np.ones(change_mag.shape,dtype=np.float64)
     threshold = np.mean(change_mag , dtype=np.float64)
     binary_mag = np.where(change_mag <=  threshold,0,binary_mag)
     print threshold,binary_mag
