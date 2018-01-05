@@ -27,11 +27,8 @@ for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_G
 #    print m1
 #    print m2
 
-    d = abs(m2-m1)
-
-    b = np.ones(d.shape,dtype=np.int)
-#    print b
-    t = np.mean(d , dtype=np.float64)
-    print t
-    b=np.where(d<t,0,b)
-    print b
+    change_mag = abs(m2-m1)
+    binary_mag = np.ones(change_mag.shape,dtype=np.int)
+    threshold = np.mean(change_mag , dtype=np.float64)
+    binary_mag=np.where(change_mag <=  threshold,0,binary_mag)
+    print threshold,binary_mag
