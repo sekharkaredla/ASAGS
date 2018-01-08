@@ -77,3 +77,6 @@ class VioFlow:
                 block_hist = self.getBlockHist(flow_video[y:y+self.B_height-1,x:x+self.B_width-1])
                 frame_hist = np.append(frame_hist,block_hist,axis = 0)
         return frame_hist
+
+    def writeFeatureToFile(self,filename):
+	np.savetxt(filename, self.getFeatureVector(), delimiter=',') 
