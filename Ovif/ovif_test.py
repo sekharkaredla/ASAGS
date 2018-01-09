@@ -30,4 +30,4 @@ for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_G
     phi1 = np.arctan(vy1/vx1)
     phi2 = np.arctan(vy2/vx2)
 
-    print phi1,phi2
+    print phi1.shape
