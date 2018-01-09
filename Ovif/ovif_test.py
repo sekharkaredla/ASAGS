@@ -75,5 +75,5 @@ for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_G
         all_hists1 = all_hists1 + hist1
         all_hists2 = all_hists2 + hist2
 
-    # print len(all_hists1) , len(all_hists2)
+    print len(all_hists1) , len(all_hists2)
 print all_hists1 , all_hists2
