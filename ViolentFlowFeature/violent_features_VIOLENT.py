@@ -6,7 +6,7 @@ for each_file in file_vio.readlines():
     feature = VioFlow(path + each_file)
     out_file = each_file[:-3] + 'txt'
     try:
-        feature.writeFeatureToFile('violent_features_of_all_videos/' + out_file)
+        feature.writeFeatureToFile('violent_features_VIOLENT/' + out_file)
         print each_file + '  done'
     except:
         print 'error in  ' + each_file
