@@ -1,3 +1,3 @@
 from ViolentFlow import VioFlow
-feature = VioFlow('novio_1.avi')
+feature = VioFlow('vio_2.avi')
 print feature.getFeatureVector()
