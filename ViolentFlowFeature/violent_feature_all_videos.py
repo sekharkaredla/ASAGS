@@ -1,6 +1,6 @@
 from ViolentFlow import VioFlow
 file_vio = open('violent_list.txt')
-path = '/Users/roshni/Desktop/VideoData/Violence/'
+path = '/home/dasarada/Desktop/Violence/'
 for each_file in file_vio.readlines():
     each_file = each_file[:-1]
     feature = VioFlow(path + each_file)
