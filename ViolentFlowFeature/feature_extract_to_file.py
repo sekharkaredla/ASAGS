@@ -1,3 +1,3 @@
 from ViolentFlow import VioFlow
-feature = VioFlow('novio_1.avi')
+feature = VioFlow('/home/dasarada/Desktop/Violence/vio_7.avi')
 feature.writeFeatureToFile('features.txt') 
