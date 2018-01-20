@@ -7,7 +7,7 @@ Y = []
 #reading non violent video features
 for i in range(1,130):
     try:
-        file_name = '/Users/roshni/Desktop/Project/TrainVif/violent_features_NON_VIOLENT/nonvio_'+str(i)+'.txt'
+        file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
         if vif.shape[0] == 336:
@@ -21,7 +21,7 @@ for i in range(1,130):
 #reading violent video features
 for i in range(1,130):
     try:
-        file_name = '/Users/roshni/Desktop/Project/TrainVif/violent_features_VIOLENT/vio_'+str(i)+'.txt'
+        file_name = 'violent_features_VIOLENT/vio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
         if vif.shape[0] == 336:
