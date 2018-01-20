@@ -35,3 +35,14 @@ conda install openblas=0.2.19
 
 image resizing
 https://www.pyimagesearch.com/2014/01/20/basic-image-manipulations-in-python-and-opencv-resizing-scaling-rotating-and-cropping/
+
+
+
+
+scikit learn how to predict(how to align data for predicting)
+https://stackoverflow.com/questions/45554008/error-in-python-script-expected-2d-array-got-1d-array-instead
+
+
+
+scikit learn how to train and predict
+http://scikit-learn.org/stable/modules/svm.html

@@ -35,13 +35,12 @@ for i in range(1,130):
 
 #training
 clf = svm.SVC(kernel = 'linear')
-clf.fit(np.asarray(X),np.asarray(Y))
+clf.fit(X,Y)
 print clf
 print("--- %s seconds ---" % (time.time() - start_time))
 
 
 #predicting
-#NON VIOLENT
 pred = []
 
 for i in X:
