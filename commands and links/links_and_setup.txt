@@ -25,6 +25,13 @@ https://github.com/tbenthompson/cppimport
 optimal flows environment installation (bob installation)
 https://www.idiap.ch/software/bob/docs/bob/bob/stable/install.html
 
+conda create -n bob_py2 --override-channels \
+  -c https://www.idiap.ch/software/bob/conda \
+  -c defaults \
+  python=2 bob
+
+
+
 optimal flow after bob installation (use this)
 http://pythonhosted.org/bob.ip.optflow.liu/guide.html
 
