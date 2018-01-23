@@ -97,3 +97,9 @@ class OvifCalc:
             ovif_video = ovif_video + each_ovif
 
         return ovif_video / self.index
+
+
+    def writeFeatureToFile(self,filename):
+        np.savetxt(filename, self.getOvifFeature(), delimiter=',')
+
+
