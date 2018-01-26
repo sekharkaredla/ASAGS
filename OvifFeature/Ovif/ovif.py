@@ -48,47 +48,53 @@ class OvifCalc:
             self.index = self.index + 1
             m2 = self.flow.getFlowMagnitude(vx2,vy2)
 
-            phi1 = np.arctan(vy1/vx1)
-            phi2 = np.arctan(vy2/vx2)
-
-            data_block_size = (m1.shape[0]*m1.shape[1])/(4*4)
-
-            m1 = np.reshape(m1,(m1.shape[0]*m1.shape[1],1))
-            m2 = np.reshape(m2,(m2.shape[0]*m2.shape[1],1))
-            phi1 = np.reshape(phi1,(phi1.shape[0]*phi1.shape[1],1))
-            phi2 = np.reshape(phi2,(phi2.shape[0]*phi2.shape[1],1))
-
-            hist_bins = np.arange(9.)*(2*np.pi)/9
-            hist_bins = np.degrees(hist_bins)
-            phi1 = np.rad2deg(phi1)
-            phi2 = np.rad2deg(phi2)
-            phi1 = np.where(phi1 < 0,360 + phi1,phi1)
-            phi2 = np.where(phi2 < 0,360 + phi2,phi2)
-
+            all_zeros1 = not np.any(vx1)
+            all_zeros2 = not np.any(vx2)
             all_hists1 = []
             all_hists2 = []
-            for k in range(0,(4*4)):
-                data_to_be_binned1 = []
-                data_to_be_binned2 = []
-                if k != (4*4)-1:
-                    data_to_be_binned1 = m1[data_block_size*k:data_block_size*(k+1)]
-                    temp_phi1 = phi1[data_block_size*k:data_block_size*(k+1)]
-                    data_to_be_binned2 = m2[data_block_size*k:data_block_size*(k+1)]
-                    temp_phi2 = phi2[data_block_size*k:data_block_size*(k+1)]
-                else:
-                    data_to_be_binned1 = m1[data_block_size*k:]
-                    temp_phi1 = phi1[data_block_size*k:]
-                    data_to_be_binned2 = m2[data_block_size*k:]
-                    temp_phi2 = phi2[data_block_size*k:]
+            if not (all_zeros1 or all_zeros2):
+                phi1 = np.arctan(vy1/vx1)
+                phi2 = np.arctan(vy2/vx2)
 
-                hist1 = self.binData(temp_phi1,hist_bins,data_to_be_binned1)
-                hist2 = self.binData(temp_phi2,hist_bins,data_to_be_binned2)
+                data_block_size = (m1.shape[0]*m1.shape[1])/(4*4)
 
-                all_hists1 = all_hists1 + hist1
-                all_hists2 = all_hists2 + hist2
+                m1 = np.reshape(m1,(m1.shape[0]*m1.shape[1],1))
+                m2 = np.reshape(m2,(m2.shape[0]*m2.shape[1],1))
+                phi1 = np.reshape(phi1,(phi1.shape[0]*phi1.shape[1],1))
+                phi2 = np.reshape(phi2,(phi2.shape[0]*phi2.shape[1],1))
 
-            binary_mag = self.getBinaryMag(all_hists1,all_hists2)
-            self.binary_mags.append(binary_mag)
+                hist_bins = np.arange(9.)*(2*np.pi)/9
+                hist_bins = np.degrees(hist_bins)
+                phi1 = np.rad2deg(phi1)
+                phi2 = np.rad2deg(phi2)
+                phi1 = np.where(phi1 < 0,360 + phi1,phi1)
+                phi2 = np.where(phi2 < 0,360 + phi2,phi2)
+
+                for k in range(0,(4*4)):
+                    data_to_be_binned1 = []
+                    data_to_be_binned2 = []
+                    if k != (4*4)-1:
+                        data_to_be_binned1 = m1[data_block_size*k:data_block_size*(k+1)]
+                        temp_phi1 = phi1[data_block_size*k:data_block_size*(k+1)]
+                        data_to_be_binned2 = m2[data_block_size*k:data_block_size*(k+1)]
+                        temp_phi2 = phi2[data_block_size*k:data_block_size*(k+1)]
+                    else:
+                        data_to_be_binned1 = m1[data_block_size*k:]
+                        temp_phi1 = phi1[data_block_size*k:]
+                        data_to_be_binned2 = m2[data_block_size*k:]
+                        temp_phi2 = phi2[data_block_size*k:]
+
+                    hist1 = self.binData(temp_phi1,hist_bins,data_to_be_binned1)
+                    hist2 = self.binData(temp_phi2,hist_bins,data_to_be_binned2)
+
+                    all_hists1 = all_hists1 + hist1
+                    all_hists2 = all_hists2 + hist2
+
+                binary_mag = self.getBinaryMag(all_hists1,all_hists2)
+                self.binary_mags.append(binary_mag)
+            else:
+                binary_mag = np.zeros(((4*4)*(9),1),dtype=np.float64)
+                self.binary_mags.append(binary_mag)
         return self.getAverageBinary()
 
     def getAverageBinary(self):
@@ -101,5 +107,3 @@ class OvifCalc:
 
     def writeFeatureToFile(self,filename):
         np.savetxt(filename, self.getOvifFeature(), delimiter=',')
-
-

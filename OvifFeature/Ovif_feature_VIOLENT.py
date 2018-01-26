@@ -1,16 +1,15 @@
-import time
+
 from Ovif import OvifCalc
 file_vio = open('violent_list.txt')
-path = '/home/sekhar/Desktop/Violence/'
-start_time = time.time()
+path = '/Users/roshni/Desktop/VideoData/Violence/'
 for each_file in file_vio.readlines():
-    each_file = each_file[:-1]
-    feature = OvifCalc(path + each_file)
-    out_file = each_file[:-3] + 'txt'
-    print each_file + '-----------------------------------------------------'
     try:
+        each_file = each_file[:-1]
+        feature = OvifCalc(path + each_file)
+        out_file = each_file[:-3] + 'txt'
+        print '-----------------------------------------------------'
+        print each_file
         feature.writeFeatureToFile('Ovif_features_VIOLENT/' + out_file)
         print each_file + '  done'
-    except:
-        print 'error in  ' + each_file
-print("--- %s seconds ---" % (time.time() - start_time))
+    except Exception as err:
+        print err
