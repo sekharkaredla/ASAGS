@@ -1,0 +1,19 @@
+PPT
+________________________
+- problem definition
+- analysis and model	
+	- design
+	- algorithm
+	- methodology
+- progress of the work
+- refernces
+
+
+REPORT
+________________________
+
+- problem definition
+- analysis and design
+- methodology
+- references
+
