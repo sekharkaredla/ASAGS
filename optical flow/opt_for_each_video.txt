@@ -1,0 +1,820 @@
+(bob_py2) Roshnis-MacBook-Air:optical flow roshni$ python optical_flow_test_each_video.py
+vio_1.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_1.avi
+vio_10.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_10.avi
+vio_100.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_100.avi
+vio_101.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_101.avi
+vio_102.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_102.avi
+vio_103.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_103.avi
+vio_104.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_104.avi
+vio_105.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_105.avi
+vio_106.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_106.avi
+vio_107.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_107.avi
+vio_108.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_108.avi
+vio_109.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_109.avi
+vio_11.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_11.avi
+vio_110.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_110.avi
+vio_111.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_111.avi
+vio_112.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_112.avi
+vio_113.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_113.avi
+vio_114.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_114.avi
+vio_115.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_115.avi
+vio_116.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_116.avi
+vio_117.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_117.avi
+vio_118.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_118.avi
+vio_119.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_119.avi
+vio_12.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_12.avi
+vio_120.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_120.avi
+vio_121.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_121.avi
+vio_122.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_122.avi
+vio_123.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_123.avi
+vio_124.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_124.avi
+vio_125.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_125.avi
+vio_126.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_126.avi
+vio_127.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_127.avi
+vio_128.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_128.avi
+vio_129.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_129.avi
+vio_13.avi-----------------------------------------------------
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_13.avi
+vio_14.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_14.avi
+vio_15.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_15.avi
+vio_16.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_16.avi
+vio_17.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_17.avi
+vio_18.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_18.avi
+vio_19.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_19.avi
+vio_2.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_2.avi
+vio_20.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_20.avi
+vio_21.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_21.avi
+vio_22.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_22.avi
+vio_23.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_23.avi
+vio_24.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_24.avi
+vio_25.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_25.avi
+vio_26.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_26.avi
+vio_27.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_27.avi
+vio_28.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_28.avi
+vio_29.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_29.avi
+vio_3.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_3.avi
+vio_30.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_30.avi
+vio_31.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_31.avi
+vio_32.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_32.avi
+vio_33.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_33.avi
+vio_34.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_34.avi
+vio_35.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_35.avi
+vio_36.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_36.avi
+vio_37.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_37.avi
+vio_38.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_38.avi
+vio_39.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_39.avi
+vio_4.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_4.avi
+vio_40.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_40.avi
+vio_41.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_41.avi
+vio_42.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_42.avi
+vio_43.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_43.avi
+vio_44.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_44.avi
+vio_45.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_45.avi
+vio_46.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_46.avi
+vio_47.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_47.avi
+vio_48.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_48.avi
+vio_49.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_49.avi
+vio_5.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_5.avi
+vio_50.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_50.avi
+vio_51.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_51.avi
+vio_52.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_52.avi
+vio_53.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_53.avi
+vio_54.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_54.avi
+vio_55.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_55.avi
+vio_56.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_56.avi
+vio_57.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_57.avi
+vio_58.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_58.avi
+vio_59.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_59.avi
+vio_6.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_6.avi
+vio_60.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_60.avi
+vio_61.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_61.avi
+vio_62.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_62.avi
+vio_63.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_63.avi
+vio_64.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_64.avi
+vio_65.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_65.avi
+vio_66.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_66.avi
+vio_67.avi-----------------------------------------------------
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+All the pixels are invalid in estimation Laplacian noise!!!
+Something severely wrong happened!!!
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_67.avi
+vio_68.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_68.avi
+vio_69.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_69.avi
+vio_7.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_7.avi
+vio_70.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_70.avi
+vio_71.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_71.avi
+vio_72.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_72.avi
+vio_73.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_73.avi
+vio_74.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_74.avi
+vio_75.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_75.avi
+vio_76.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_76.avi
+vio_77.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_77.avi
+vio_78.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_78.avi
+vio_79.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_79.avi
+vio_8.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_8.avi
+vio_80.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_80.avi
+vio_81.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_81.avi
+vio_82.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_82.avi
+vio_83.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_83.avi
+vio_84.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_84.avi
+vio_85.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_85.avi
+vio_86.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_86.avi
+vio_87.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_87.avi
+vio_88.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_88.avi
+vio_89.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_89.avi
+vio_9.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_9.avi
+vio_90.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_90.avi
+vio_91.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_91.avi
+vio_92.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_92.avi
+vio_93.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_93.avi
+vio_94.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_94.avi
+vio_95.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_95.avi
+vio_96.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_96.avi
+vio_97.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_97.avi
+vio_98.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_98.avi
+vio_99.avi-----------------------------------------------------
+OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /Users/travis/build/skvark/opencv-python/opencv/modules/imgproc/src/color.cpp, line 11111
+error in  vio_99.avi
