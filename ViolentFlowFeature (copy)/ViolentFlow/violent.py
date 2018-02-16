@@ -55,11 +55,21 @@ class VioFlow:
 
         flow_video = flow_video / index
 
+
+        #original
+        # self.height = flow_video.shape[0]
+        # self.width = flow_video.shape[1]
+        # self.B_height = int(math.floor(float(self.height - 11)/4))
+        # self.B_width = int(math.floor(float(self.width - 11)/4))
+
+        # testing
         self.height = flow_video.shape[0]
         self.width = flow_video.shape[1]
-        self.B_height = int(math.floor(float(self.height - 11)/4))
-        self.B_width = int(math.floor(float(self.width - 11)/4))
+        self.B_height = int(math.floor(float(self.height - 10)/5))
+        self.B_width = int(math.floor(float(self.width - 10)/5))
+
         # print self.height , self.width , self.B_height , self.B_width
+
         return flow_video
 
     def histc(self,X, bins):
@@ -80,12 +90,14 @@ class VioFlow:
     def getFeatureVector(self):
         frame_hist = []
         flow_video = self.getViolentFlow()
-        for y in range(6,self.height-self.B_height-4,self.B_height):
-            for x in range(6,self.width-self.B_width-4,self.B_width):
+        # for y in range(6,self.height-self.B_height-4,self.B_height):
+        #     for x in range(6,self.width-self.B_width-4,self.B_width):
+        for y in range(0,self.height-self.B_height+1,self.B_height):
+            for x in range(0,self.width-self.B_width+1,self.B_width):
                 # print flow_video[y:y+self.B_height,x:x+self.B_width].shape
                 block_hist = self.getBlockHist(flow_video[y:y+self.B_height,x:x+self.B_width])
                 frame_hist = np.append(frame_hist,block_hist,axis = 0)
-        # print frame_hist.shape
+        print frame_hist.shape
         return frame_hist
 
     def writeFeatureToFile(self,filename):

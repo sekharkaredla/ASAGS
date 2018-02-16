@@ -10,6 +10,8 @@ for i in range(1,130):
         file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
+        if vif.shape[0] == 630:# avoiding hd videos
+            continue
         X.append(vif)
         Y.append(0)
         file_obj.close()
@@ -22,6 +24,8 @@ for i in range(1,130):
         file_name = 'violent_features_VIOLENT/vio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
+        if vif.shape[0] == 630:# avoiding hd videos
+            continue
         X.append(vif)
         Y.append(1)
         file_obj.close()
