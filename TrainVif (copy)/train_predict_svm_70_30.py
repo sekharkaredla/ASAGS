@@ -12,8 +12,6 @@ for i in range(1,130):
         file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
-        if vif.shape[0] == 336:
-            continue
         if i < 92:
             X_train.append(vif)
             Y_train.append(0)
@@ -30,8 +28,6 @@ for i in range(1,130):
         file_name = 'violent_features_VIOLENT/vio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
-        if vif.shape[0] == 336:
-            continue
         if i < 92:
             X_train.append(vif)
             Y_train.append(1)
