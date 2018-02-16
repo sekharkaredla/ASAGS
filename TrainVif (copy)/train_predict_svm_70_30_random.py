@@ -72,4 +72,5 @@ for i in range(1,21):
     accuracy = float(count)/len(Y_test)
     print 'accuracy is : ' + str(accuracy)
     acc_all = acc_all + accuracy
+    print clf.get_params(deep = True)
 print 'overall : ' + str(acc_all/20.0)
