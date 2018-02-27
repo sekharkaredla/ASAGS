@@ -22,7 +22,7 @@ for i in range(10,131,10):
             file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(data_nonviolent[j])+'.txt'
             file_obj = open(file_name,'r')
             vif = np.loadtxt(file_obj)
-            if vif.shape[0] == 630:# avoiding hd videos
+            if vif.shape[0] == 336:# avoiding hd videos
                 continue
             X_test.append(vif)
             Y_test.append(0)
@@ -34,7 +34,7 @@ for i in range(10,131,10):
             file_name = 'violent_features_VIOLENT/vio_'+str(data_violent[j])+'.txt'
             file_obj = open(file_name,'r')
             vif = np.loadtxt(file_obj)
-            if vif.shape[0] == 630:# avoiding hd videos
+            if vif.shape[0] == 336:# avoiding hd videos
                 continue
             X_test.append(vif)
             Y_test.append(1)
@@ -44,12 +44,12 @@ for i in range(10,131,10):
             print 'error in reading nonvio_%d.txt'%data_violent[i]
     for j in range(1,130):
         try:
-            if j in test_set:
+            if j in [data_nonviolent[l] for l in test_set]:
                 continue
-            file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(data_nonviolent[j])+'.txt'
+            file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(j)+'.txt'
             file_obj = open(file_name,'r')
             vif = np.loadtxt(file_obj)
-            if vif.shape[0] == 630:# avoiding hd videos
+            if vif.shape[0] == 336:# avoiding hd videos
                 continue
             X_train.append(vif)
             Y_train.append(0)
@@ -59,12 +59,12 @@ for i in range(10,131,10):
             print 'error in reading nonvio_%d.txt'%j
     for j in range(1,130):
         try:
-            if j in test_set:
+            if j in [data_violent[l] for l in test_set]:
                 continue
-            file_name = 'violent_features_VIOLENT/vio_'+str(data_violent[j])+'.txt'
+            file_name = 'violent_features_VIOLENT/vio_'+str(j)+'.txt'
             file_obj = open(file_name,'r')
             vif = np.loadtxt(file_obj)
-            if vif.shape[0] == 630:# avoiding hd videos
+            if vif.shape[0] == 336:# avoiding hd videos
                 continue
             X_train.append(vif)
             Y_train.append(1)
