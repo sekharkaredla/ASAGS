@@ -1,6 +1,7 @@
-# generating 20 weak classifiers 
+# generating 20 weak classifiers
 # 50 for training
 # 80 for testing(validation)
+# further assign weights to each classifier and train them repeatedly until a certain number of epochs and create an ensemble of those classifiers.
 
 from sklearn import svm
 import numpy as np
@@ -79,21 +80,30 @@ for i in nonviolence_indexes[0:40]:
 	except:
 		continue
 
-total_accuracy = 0.0
-for i in range(0,20):
-	clf_obj = Classifier()
-	pred = []
 
-	for j in X_test:
-		pred.append(clf_obj.clf.predict(j.reshape(1,-1)))
 
-	count = 0
+def calculate_classifier_accuracy_20():
+	classifiers = {}
+	total_accuracy = 0.0
+	for i in range(0,20):
+		clf_obj = Classifier()
+		classifiers[clf_obj] = 0.0
+		pred = []
 
-	for j in range(0,len(Y_test)):
-	    if pred[j][0] == Y_test[j]:
-	        count = count + 1	
+		for j in X_test:
+			pred.append(clf_obj.clf.predict(j.reshape(1,-1)))
 
-	total_accuracy += float(count)/len(Y_test)
-	print 'accuracy is : '+str(float(count)/len(Y_test))
+		count = 0
 
-print 'average accuracy is : ' + str(total_accuracy/20)
+		for j in range(0,len(Y_test)):
+		    if pred[j][0] == Y_test[j]:
+		        count = count + 1
+
+		total_accuracy += float(count)/len(Y_test)
+		print 'accuracy is : '+str(float(count)/len(Y_test))
+		classifiers[clf_obj] = float(count)/len(Y_test)
+	print 'average accuracy is : ' + str(total_accuracy/20)
+	return classifiers
+
+
+classifiers = calculate_classifier_accuracy_20()
