@@ -89,6 +89,9 @@ for each_feature in range(0,252):
     clf.fit(np.array(train_data_X).reshape(-1,1),np.array(train_data_Y).reshape(-1,1))
     classifiers[each_feature] = clf
 
-    #calculate error for each classifier
+#calculate error for each classifier
+errors = [0.0]*252
 
+for each_feature in range(0,252):
+    
     
