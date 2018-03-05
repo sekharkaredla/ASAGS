@@ -1,13 +1,13 @@
-#cleafrom keras.models import Sequential
-#from keras.layers import Dense
+from keras.models import Sequential
+from keras.layers import Dense
 import numpy as np
+import random
 
-np.random.seed(7)
 
-X_train = []
-Y_train = []
-X_test = []
-Y_test = []
+X_train = np.empty((0,252))
+Y_train = np.array([])
+X_test = np.empty((0,252))
+Y_test = np.array([])
 count = 0
 data = range(1,130)
 random.shuffle(data)
@@ -17,20 +17,21 @@ for i in data:
         file_name = 'violent_features_NON_VIOLENT/nonvio_' + str(i) + '.txt'
         file_obj = open(file_name, 'r')
         vif = np.loadtxt(file_obj)
-        print vif.shape
         if vif.shape[0] == 630:  # avoiding hd videos
             continue
+        vif = np.reshape(vif, (-1, vif.shape[0]))
         if count < 92:
-            X_train.append(vif)
-            Y_train.append(0)
+            X_train = np.vstack((X_train,vif))
+            Y_train = np.append(Y_train,0)
         else:
-            X_test.append(vif)
-            Y_test.append(0)
+            X_test = np.vstack((X_test,vif))
+            Y_test = np.append(Y_test,0)
         file_obj.close()
         count += 1
     except:
         continue
         print 'error in reading nonvio_%d.txt' % i
+
 # reading violent video features
 count = 0
 for i in data:
@@ -40,14 +41,17 @@ for i in data:
         vif = np.loadtxt(file_obj)
         if vif.shape[0] == 630:  # avoiding hd videos
             continue
+        vif = np.reshape(vif, (-1, vif.shape[0]))
         if count < 92:
-            X_train.append(vif)
-            Y_train.append(1)
+            X_train = np.vstack((X_train, vif))
+            Y_train = np.append(Y_train, 1)
         else:
-            X_test.append(vif)
-            Y_test.append(1)
+            X_test = np.vstack((X_test, vif))
+            Y_test = np.append(Y_test, 1)
         file_obj.close()
         count += 1
     except:
         continue
         print 'error in reading vio_%d.txt' % i
+
+
