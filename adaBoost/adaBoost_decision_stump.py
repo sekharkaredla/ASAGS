@@ -1,4 +1,4 @@
-from sklearn import svm
+from sklearn import tree
 import numpy as np
 import random
 
@@ -89,7 +89,7 @@ for t in range(0,5):
             train_data_X.append(each_set[each_feature])
             train_data_Y.append(Y_train[i])
             i += 1
-        clf = svm.SVC(kernel = 'rbf')
+        clf = tree.DecisionTreeClassifier(max_depth = 1)
         clf.fit(np.array(train_data_X).reshape(-1,1),np.array(train_data_Y).reshape(-1,1))
         classifiers[each_feature] = clf
 
@@ -109,7 +109,7 @@ for t in range(0,5):
             errors[each_feature] += weights[i] * abs(each_pred - Y_test[i])
             i += 1
 
-    # print errors
+    print errors
     min_error_classifier_index = np.where(errors == np.amin(errors))
 
     min_error_classifier_index = min_error_classifier_index[0][0]
