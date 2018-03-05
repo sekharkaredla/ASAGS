@@ -31,6 +31,7 @@ for i in range(1,21):
         except:
             continue
             print 'error in reading nonvio_%d.txt'%i
+
     #reading violent video features
     count = 0
     for i in data:
@@ -38,6 +39,7 @@ for i in range(1,21):
             file_name = 'violent_features_VIOLENT/vio_'+str(i)+'.txt'
             file_obj = open(file_name,'r')
             vif = np.loadtxt(file_obj)
+
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
             if count < 92:
