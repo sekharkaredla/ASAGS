@@ -1,4 +1,4 @@
-from sklearn import svm
+from sklearn import tree
 import numpy as np
 import random
 
@@ -68,7 +68,6 @@ for i in data_violent:
 
 # initial weights done
 i = 0
-print m,l
 weights = []
 for i in range(0,len(Y_train)):
     if Y_train[i] == 1:
@@ -76,7 +75,7 @@ for i in range(0,len(Y_train)):
     else:
         weights.append(1.0/(2*l))
 
-for t in range(0,10):
+for t in range(0,5):
     # normalize weights
     weights = [x/sum(weights) for x in weights]
 
@@ -90,8 +89,43 @@ for t in range(0,10):
             train_data_X.append(each_set[each_feature])
             train_data_Y.append(Y_train[i])
             i += 1
-        clf = svm.SVC(kernel = 'linear')
+        clf = tree.DecisionTreeClassifier(max_depth = 1)
         clf.fit(np.array(train_data_X).reshape(-1,1),np.array(train_data_Y).reshape(-1,1))
         classifiers[each_feature] = clf
 
-    # calculate error for all 252 classifiers 
+    # calculate error for all classifiers
+    errors = [0.0] * 252
+    for each_feature in range(0,252):
+        clf = classifiers[each_feature]
+        i = 0
+        preds = []
+        for each_set in X_test:
+			test_data_X = each_set[each_feature]
+			i += 1
+			preds.append(clf.predict(test_data_X.reshape(1,-1))[0])
+        i = 0
+
+        for each_pred in preds:
+            errors[each_feature] += weights[i] * abs(each_pred - Y_test[i])
+            i += 1
+
+    print errors
+    min_error_classifier_index = np.where(errors == np.amin(errors))
+
+    min_error_classifier_index = min_error_classifier_index[0][0]
+
+    beta_change = errors[min_error_classifier_index]/(1.0 - errors[min_error_classifier_index])
+
+    classifier = classifiers[min_error_classifier_index]
+
+    classifier_preds = []
+
+    for each_set in X_test:
+        classifier_preds.append(classifier.predict(each_set[min_error_classifier_index].reshape(1,-1))[0])
+
+    i = 0
+    for each_pred in classifier_preds:
+        weights[i] = weights[i] * (beta_change ** (abs(each_pred - Y_test[i])))
+
+    # print weights
+    print '----------------------------------------------'
