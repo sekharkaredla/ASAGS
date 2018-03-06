@@ -1,7 +1,7 @@
 from keras.models import Sequential
 from keras.layers import Dense
 import numpy as np
-import random
+#import random
 import time
 
 
@@ -10,9 +10,9 @@ X_train = np.empty((0,252))
 Y_train = np.array([])
 X_test = np.empty((0,252))
 Y_test = np.array([])
-count = 0
+#count = 0
 data = range(1,130)
-random.shuffle(data)
+#random.shuffle(data)
 
 start_time = time.time()
 
@@ -24,20 +24,20 @@ for i in data:
         if vif.shape[0] == 630:  # avoiding hd videos
             continue
         vif = np.reshape(vif, (-1, vif.shape[0]))
-        if count < 92:
+        if i < 92:
             X_train = np.vstack((X_train,vif))
             Y_train = np.append(Y_train,0)
         else:
             X_test = np.vstack((X_test,vif))
             Y_test = np.append(Y_test,0)
         file_obj.close()
-        count += 1
+        #count += 1
     except:
         continue
         print 'error in reading nonvio_%d.txt' % i
 
 # reading violent video features
-count = 0
+#count = 0
 for i in data:
     try:
         file_name = 'violent_features_VIOLENT/vio_' + str(i) + '.txt'
@@ -46,14 +46,14 @@ for i in data:
         if vif.shape[0] == 630:  # avoiding hd videos
             continue
         vif = np.reshape(vif, (-1, vif.shape[0]))
-        if count < 92:
+        if i < 92:
             X_train = np.vstack((X_train, vif))
             Y_train = np.append(Y_train, 1)
         else:
             X_test = np.vstack((X_test, vif))
             Y_test = np.append(Y_test, 1)
         file_obj.close()
-        count += 1
+        #count += 1
     except:
         continue
         print 'error in reading vio_%d.txt' % i
@@ -70,7 +70,7 @@ model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
 
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-model.fit(X_train, Y_train, epochs=150, batch_size=2,  verbose=0)
+model.fit(X_train, Y_train, epochs=150, batch_size=20,  verbose=0)
 
 predictions = model.predict(X_test)
 

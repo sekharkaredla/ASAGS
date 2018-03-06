@@ -66,6 +66,7 @@ for i in data_violent:
     except:
         continue
 
+print l,m
 # initial weights done
 i = 0
 weights = []

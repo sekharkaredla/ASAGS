@@ -2,9 +2,10 @@ from keras.models import Sequential
 from keras.layers import Dense
 import numpy as np
 import random
+import time
 
 ovr_acc = 0.0
-
+start_time = time.time()
 for j in range(1,21):
     X_train = np.empty((0,252))
     Y_train = np.array([])
@@ -68,7 +69,7 @@ for j in range(1,21):
 
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-    model.fit(X_train, Y_train, epochs=150, batch_size=10,  verbose=0)
+    model.fit(X_train, Y_train, epochs=150, batch_size=2,  verbose=0)
 
     predictions = model.predict(X_test)
 
@@ -85,3 +86,4 @@ for j in range(1,21):
     ovr_acc += accuracy
 
 print 'overall : ' + str(ovr_acc/20.0)
+print("--- %s seconds ---" % (time.time() - start_time))
