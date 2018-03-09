@@ -17,7 +17,7 @@ l = 0
 
 for i in data_nonviolent:
     try:
-        file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(i)+'.txt'
+        file_name = 'Ovif_features_NON_VIOLENT/nonvio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
         if vif.shape[0] == 336:# avoiding hd videos
@@ -30,7 +30,7 @@ for i in data_nonviolent:
         continue
 for i in data_violent:
     try:
-        file_name = 'violent_features_VIOLENT/vio_'+str(i)+'.txt'
+        file_name = 'Ovif_features_VIOLENT/vio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
         if vif.shape[0] == 336:# avoiding hd videos
@@ -43,7 +43,7 @@ for i in data_violent:
         continue
 for i in data_nonviolent:
     try:
-        file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(i)+'.txt'
+        file_name = 'Ovif_features_NON_VIOLENT/nonvio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
         if vif.shape[0] == 336:# avoiding hd videos
@@ -55,7 +55,7 @@ for i in data_nonviolent:
         continue
 for i in data_violent:
     try:
-        file_name = 'violent_features_VIOLENT/vio_'+str(i)+'.txt'
+        file_name = 'Ovif_features_VIOLENT/vio_'+str(i)+'.txt'
         file_obj = open(file_name,'r')
         vif = np.loadtxt(file_obj)
         if vif.shape[0] == 336:# avoiding hd videos
@@ -81,13 +81,13 @@ def find_nth_smallest(a, n):
 selected_features = []
 final_classifiers = []
 beta_changes = []
-for t in range(0,180):
+for t in range(0,90):
     # normalize weights
     weights = [x/sum(weights) for x in weights]
 
     # generate classifier for each feature
     classifiers = {}
-    for each_feature in range(0,252):
+    for each_feature in range(0,144):
         train_data_X = []
         train_data_Y = []
         i = 0
@@ -100,8 +100,8 @@ for t in range(0,180):
         classifiers[each_feature] = clf
 
     # calculate error for all classifiers
-    errors = [0.0] * 252
-    for each_feature in range(0,252):
+    errors = [0.0] * 144
+    for each_feature in range(0,144):
         clf = classifiers[each_feature]
         i = 0
         preds = []
