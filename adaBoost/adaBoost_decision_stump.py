@@ -66,7 +66,6 @@ for i in data_violent:
     except:
         continue
 
-print l,m
 # initial weights done
 i = 0
 weights = []
@@ -76,6 +75,10 @@ for i in range(0,len(Y_train)):
     else:
         weights.append(1.0/(2*l))
 
+def find_nth_smallest(a, n):
+    return np.partition(a, n-1)[n-1]
+
+selected_features = []
 for t in range(0,5):
     # normalize weights
     weights = [x/sum(weights) for x in weights]
@@ -111,10 +114,23 @@ for t in range(0,5):
             i += 1
 
     print errors
+
     min_error_classifier_index = np.where(errors == np.amin(errors))
 
     min_error_classifier_index = min_error_classifier_index[0][0]
-
+    if (min_error_classifier_index not in selected_features):
+        selected_features.append(min_error_classifier_index)
+    else:
+        i = 2
+        while(True):
+            nth_min = find_nth_smallest(errors,i)
+            min_error_classifier_index = np.where(errors == nth_min)
+            min_error_classifier_index = min_error_classifier_index[0][0]
+            if (min_error_classifier_index not in selected_features):
+                selected_features.append(min_error_classifier_index)
+                break
+            else:
+                i += 1
     beta_change = errors[min_error_classifier_index]/(1.0 - errors[min_error_classifier_index])
 
     classifier = classifiers[min_error_classifier_index]
@@ -130,3 +146,5 @@ for t in range(0,5):
 
     # print weights
     print '----------------------------------------------'
+
+print selected_features
