@@ -79,7 +79,9 @@ def find_nth_smallest(a, n):
     return np.partition(a, n-1)[n-1]
 
 selected_features = []
-for t in range(0,5):
+final_classifiers = []
+beta_changes = []
+for t in range(0,100):
     # normalize weights
     weights = [x/sum(weights) for x in weights]
 
@@ -113,7 +115,7 @@ for t in range(0,5):
             errors[each_feature] += weights[i] * abs(each_pred - Y_test[i])
             i += 1
 
-    print errors
+    # print errors
 
     min_error_classifier_index = np.where(errors == np.amin(errors))
 
@@ -131,9 +133,15 @@ for t in range(0,5):
                 break
             else:
                 i += 1
+
+
     beta_change = errors[min_error_classifier_index]/(1.0 - errors[min_error_classifier_index])
 
+    beta_changes.append(beta_change)
+
     classifier = classifiers[min_error_classifier_index]
+
+    final_classifiers.append(classifier)
 
     classifier_preds = []
 
@@ -146,5 +154,8 @@ for t in range(0,5):
 
     # print weights
     print '----------------------------------------------'
+    print 'iteration: '+str(t+1)+' index: '+str(min_error_classifier_index)
+    print '----------------------------------------------'
 
 print selected_features
+print beta_changes
