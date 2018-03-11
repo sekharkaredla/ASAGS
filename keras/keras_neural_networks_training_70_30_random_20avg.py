@@ -65,11 +65,13 @@ for j in range(1,21):
     model = Sequential()
     model.add(Dense(255, activation="relu", kernel_initializer="uniform", input_dim=252))
     model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
+    model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
+    model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
     model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
 
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-    model.fit(X_train, Y_train, epochs=150, batch_size=2,  verbose=0)
+    model.fit(X_train, Y_train, epochs=150, batch_size=10,  verbose=0)
 
     predictions = model.predict(X_test)
 
