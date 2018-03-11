@@ -64,10 +64,10 @@ for j in range(1,21):
     np.random.seed(seed)
     model = Sequential()
     model.add(Dense(255, activation="relu", kernel_initializer="uniform", input_dim=252))
-    model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
-    model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
-    model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
-    model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
+
+    for l in range(1,5):
+        model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
+
     model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
 
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
