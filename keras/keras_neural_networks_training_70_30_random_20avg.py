@@ -67,6 +67,7 @@ for j in range(1,21):
     model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
     model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
     model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
+    model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
     model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
 
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
