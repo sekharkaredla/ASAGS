@@ -1,0 +1,5 @@
+vif
+------------
+accuracy is : 0.697211155378  for selection of 100 features
+
+accuracy is : 0.796812749004  for selection of 11 features

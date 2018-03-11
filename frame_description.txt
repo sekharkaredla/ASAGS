@@ -1,0 +1,40 @@
+I frame - "Intra-coded" frames : average 7:1 reduction.
+
+- like JPEG, every video frame is broken into blocks of 8x8
+pixels of Y, R-Y, and B-Y (although, I am not sure how
+this "1/4 pixels" divx5 has plays into all this)
+
+- blocks are grouped into "macroblocks" of 16x16
+
+- macroblocks are grouped horizontally into slices which
+have similar average block levels.
+
+- multiple slices form a frame, and these frames are the
+resulting "I" frames.
+
+P frame - P frames are predicted based on prior I or P frames plus
+the addition of data for changed macroblocks.
+
+- average about 20:1 reduction, or about half the size of I
+frames
+
+- I don't think divx5 uses these, MPEG2 does though.
+
+B frame - Bidirectionally predicted frames based on appearance and
+positions of past and future frames macroblocks.
+
+- B frames require less data than P frames, averaging about
+50:1 reduction.
+
+- B frames require more decoder buffer memory because 2
+frames are compared during the reconstruction process.
+
+- B frames also require manipulation of the coding order:
+frames moving from the coder to the decoder are NOT in
+presentation sequence. 
+
+basically, the the B frame will say something like "this frame is the same as the GOP's "I" frame except this one part, I will only contain the data needed to encode this one part, and combine it with the info from the I frame", in laymen's terms of course. This give DivX5 it's optimal reduction capability.
+
+
+MPEG2 at least, a GOP order is always IPBBPBBPBBIPBBPBB etc etc. (pending on your GOP size), but it is always 1 I, 1 P, and 2 B's, then you can stack more groups of "PBB"'s in that one GOP if needed (usually up to 15 total frames.
+
