@@ -1,6 +1,12 @@
+from keras.models import Sequential
+from keras.layers import Dense
+import numpy as np
+import random
+import time
 
-total_accuracy = 0.0
+ovr_acc = 0.0
 iters = 0
+start_time = time.time()
 
 data_violent = range(1,130)
 data_nonviolent = range(1,130)
@@ -69,5 +75,36 @@ for i in range(10,131,10):
         except:
             continue
             print 'error in reading vio_%d.txt'%j
-
     
+    if len(X_train) == 0:
+        iters -= 1
+        continue
+            
+    seed = 7
+    np.random.seed(seed)
+    model = Sequential()
+    model.add(Dense(255, activation="relu", kernel_initializer="uniform", input_dim=252))
+
+    for l in range(1,5):
+        model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
+
+    model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
+
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    model.fit(X_train, Y_train, epochs=150, batch_size=10,  verbose=0)
+
+    predictions = model.predict(X_test)
+
+    pred = [round(x[0]) for x in predictions]
+
+
+    acc_count = 0
+    for k in range(0,len(pred)):
+        if pred[k] == Y_test[k]:
+            acc_count += 1
+
+    accuracy = float(acc_count)/len(pred)
+    print 'accuracy is : ' + str(accuracy)
+    ovr_acc += accuracy
+print 'average accuracy is : ' + str(ovr_acc/iters)
