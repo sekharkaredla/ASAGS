@@ -1,6 +1,3 @@
-from sklearn import svm
-import numpy as np
-import random
 
 total_accuracy = 0.0
 iters = 0
@@ -11,10 +8,10 @@ random.shuffle(data_violent)
 random.shuffle(data_nonviolent)
 
 for i in range(10,131,10):
-    X_train = []
-    Y_train = []
-    X_test = []
-    Y_test = []
+    X_train = np.empty((0,252))
+    Y_train = np.array([])
+    X_test = np.empty((0,252))
+    Y_test = np.array([])
     iters += 1
     test_set = range(i-10,i)
     for j in test_set:
@@ -24,8 +21,8 @@ for i in range(10,131,10):
             vif = np.loadtxt(file_obj)
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
-            X_test.append(vif)
-            Y_test.append(0)
+            X_test = np.vstack(X_test,vif.reshape(-1,vif.shape[0]))
+            Y_test = np.append(Y_test,0)
             file_obj.close()
         except:
             continue
@@ -36,8 +33,8 @@ for i in range(10,131,10):
             vif = np.loadtxt(file_obj)
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
-            X_test.append(vif)
-            Y_test.append(1)
+            X_test = np.vstack(X_test,vif.reshape(-1,vif.shape[0]))
+            Y_test = np.append(Y_test,1)
             file_obj.close()
         except:
             continue
@@ -51,8 +48,8 @@ for i in range(10,131,10):
             vif = np.loadtxt(file_obj)
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
-            X_train.append(vif)
-            Y_train.append(0)
+            X_train = np.vstack(X_train,vif.reshape(-1,vif.shape[0]))
+            Y_train = np.append(Y_train,0)
             file_obj.close()
         except:
             continue
@@ -66,32 +63,11 @@ for i in range(10,131,10):
             vif = np.loadtxt(file_obj)
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
-            X_train.append(vif)
-            Y_train.append(1)
+            X_train = np.vstack(X_train,reshape(-1,vif.shape[0]))
+            Y_train = np.append(Y_train,1)
             file_obj.close()
         except:
             continue
             print 'error in reading vio_%d.txt'%j
 
-    clf = svm.SVC(kernel = 'linear')
-    if len(X_train) == 0:
-        iters -= 1
-        continue
-    clf.fit(X_train,Y_train)
-    print clf
-
-    pred = []
-
-    for i in X_test:
-        pred.append(clf.predict(i.reshape(1,-1)))
-
-    count = 0
-
-    for i in range(0,len(Y_test)):
-        if pred[i][0] == Y_test[i]:
-            count = count + 1
-
-    total_accuracy += float(count)/len(Y_test)
-    print 'accuracy is : '+str(float(count)/len(Y_test))
-
-print 'average accuracy is : ' + str(total_accuracy/iters)
+    
