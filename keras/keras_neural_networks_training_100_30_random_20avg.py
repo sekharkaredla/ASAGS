@@ -1,5 +1,6 @@
 from keras.models import Sequential
 from keras.layers import Dense
+from sklearn.metrics import confusion_matrix
 import numpy as np
 import random
 import time
@@ -27,7 +28,7 @@ for j in range(1,21):
             X_train = np.vstack((X_train,vif))
             Y_train = np.append(Y_train,0)
 
-            if count%3==0 and len(Y_test)<=30:
+            if count%2==0 and len(Y_test)<=39:
                 X_test = np.vstack((X_test,vif))
                 Y_test = np.append(Y_test,0)
 
@@ -51,7 +52,7 @@ for j in range(1,21):
             X_train = np.vstack((X_train, vif))
             Y_train = np.append(Y_train, 1)
 
-            if count%3==0 and len(Y_train)<=30:
+            if count%2==0 and len(Y_test)<=78:
                 X_test = np.vstack((X_test, vif))
                 Y_test = np.append(Y_test, 1)
 
@@ -71,7 +72,6 @@ for j in range(1,21):
 
     for l in range(1,2):
         model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
-
     model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
 
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -87,6 +87,9 @@ for j in range(1,21):
     for k in range(0,len(pred)):
         if pred[k] == Y_test[k]:
             acc_count += 1
+
+    cm = confusion_matrix(Y_test, pred)
+    print cm
 
     accuracy = float(acc_count)/len(pred)
     print 'accuracy is : ' + str(accuracy)

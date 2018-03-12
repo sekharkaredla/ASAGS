@@ -13,13 +13,13 @@ data_nonviolent = range(1,130)
 random.shuffle(data_violent)
 random.shuffle(data_nonviolent)
 
-for i in range(10,131,10):
+for i in range(10,131,20):
     X_train = np.empty((0,252))
     Y_train = np.array([])
     X_test = np.empty((0,252))
     Y_test = np.array([])
     iters += 1
-    test_set = range(i-10,i)
+    test_set = range(i-20,i)
     for j in test_set:
         try:
             file_name = 'violent_features_NON_VIOLENT/nonvio_'+str(data_nonviolent[j])+'.txt'
