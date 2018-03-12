@@ -10,7 +10,6 @@ random.shuffle(data)
 X_train = np.empty((0,252))
 Y_train = np.array([])
 for i in data:
-    print i
     try:
         file_name = 'violent_features_NON_VIOLENT/nonvio_' + str(i) + '.txt'
         file_obj = open(file_name, 'r')
@@ -28,22 +27,37 @@ for i in data:
         print 'error in reading nonvio_%d.txt' % i
 
 # reading violent video features
-    for i in data:
-        try:
-            file_name = 'violent_features_VIOLENT/vio_' + str(i) + '.txt'
-            file_obj = open(file_name, 'r')
-            vif = np.loadtxt(file_obj)
-            if vif.shape[0] == 630:  # avoiding hd videos
-                continue
-            vif = np.reshape(vif, (-1, vif.shape[0]))
-
-            X_train = np.vstack((X_train, vif))
-            Y_train = np.append(Y_train, 1)
-
-            file_obj.close()
-        except:
+for i in data:
+    try:
+        file_name = 'violent_features_VIOLENT/vio_' + str(i) + '.txt'
+        file_obj = open(file_name, 'r')
+        vif = np.loadtxt(file_obj)
+        if vif.shape[0] == 630:  # avoiding hd videos
             continue
-            print 'error in reading vio_%d.txt' % i
+        vif = np.reshape(vif, (-1, vif.shape[0]))
+
+        X_train = np.vstack((X_train, vif))
+        Y_train = np.append(Y_train, 1)
+
+        file_obj.close()
+    except:
+        continue
+        print 'error in reading vio_%d.txt' % i
+
+seed = 7
+np.random.seed(seed)
+model = Sequential()
+model.add(Dense(255, activation="relu", kernel_initializer="uniform", input_dim=252))
+
+for l in range(1,2):
+    model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
+model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
+
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+model.fit(X_train, Y_train, epochs=150, batch_size=10,  verbose=0)
+
+print 'model trained'
 
 ovr_acc = 0.0
 start_time = time.time()
@@ -53,7 +67,6 @@ for j in range(1,21):
     Y_test = np.array([])
     count = 0
     for i in data:
-        print i
         try:
             file_name = 'violent_features_NON_VIOLENT/nonvio_' + str(i) + '.txt'
             file_obj = open(file_name, 'r')
@@ -92,18 +105,7 @@ for j in range(1,21):
             print 'error in reading vio_%d.txt' % i
 
 
-    seed = 7
-    np.random.seed(seed)
-    model = Sequential()
-    model.add(Dense(255, activation="relu", kernel_initializer="uniform", input_dim=252))
-
-    for l in range(1,2):
-        model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
-    model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
-
-    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-
-    model.fit(X_train, Y_train, epochs=150, batch_size=10,  verbose=0)
+    
     
     predictions = model.predict(X_test)
     
@@ -124,3 +126,12 @@ for j in range(1,21):
 
 print 'overall : ' + str(ovr_acc/20.0)
 print("--- %s seconds ---" % (time.time() - start_time))
+
+model_json = model.to_json()
+
+with open("model_100.json", "w") as json_file:
+    json_file.write(model_json)
+
+model.save_weights("model_100.h5")
+print("Saved model to disk")
+
