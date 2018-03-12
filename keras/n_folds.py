@@ -27,7 +27,8 @@ for i in range(10,131,10):
             vif = np.loadtxt(file_obj)
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
-            X_test = np.vstack(X_test,vif.reshape(-1,vif.shape[0]))
+            vif = np.reshape(vif,(-1,vif.shape[0]))
+            X_test = np.vstack((X_test,vif))
             Y_test = np.append(Y_test,0)
             file_obj.close()
         except:
@@ -39,7 +40,8 @@ for i in range(10,131,10):
             vif = np.loadtxt(file_obj)
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
-            X_test = np.vstack(X_test,vif.reshape(-1,vif.shape[0]))
+            vif = np.reshape(vif,(-1,vif.shape[0]))
+            X_test = np.vstack((X_test,vif))
             Y_test = np.append(Y_test,1)
             file_obj.close()
         except:
@@ -54,7 +56,8 @@ for i in range(10,131,10):
             vif = np.loadtxt(file_obj)
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
-            X_train = np.vstack(X_train,vif.reshape(-1,vif.shape[0]))
+            vif = np.reshape(vif,(-1,vif.shape[0]))
+            X_train = np.vstack((X_train,vif))
             Y_train = np.append(Y_train,0)
             file_obj.close()
         except:
@@ -69,7 +72,8 @@ for i in range(10,131,10):
             vif = np.loadtxt(file_obj)
             if vif.shape[0] == 630:# avoiding hd videos
                 continue
-            X_train = np.vstack(X_train,reshape(-1,vif.shape[0]))
+            vif = np.reshape(vif,(-1,vif.shape[0]))
+            X_train = np.vstack((X_train,vif))
             Y_train = np.append(Y_train,1)
             file_obj.close()
         except:
