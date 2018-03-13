@@ -1,5 +1,6 @@
 from keras.models import Sequential
 from keras.layers import Dense
+from sklearn.metrics import confusion_matrix
 import numpy as np
 import random
 import time
@@ -65,7 +66,7 @@ for j in range(1,21):
     model = Sequential()
     model.add(Dense(255, activation="relu", kernel_initializer="uniform", input_dim=252))
 
-    for l in range(1,5):
+    for l in range(1,7):
         model.add(Dense(252, activation='relu', kernel_initializer="uniform"))
 
     model.add(Dense(1, activation="sigmoid", kernel_initializer="uniform"))
@@ -83,6 +84,9 @@ for j in range(1,21):
     for k in range(0,len(pred)):
         if pred[k] == Y_test[k]:
             acc_count += 1
+
+    cm = confusion_matrix(Y_test, pred)
+    print cm
 
     accuracy = float(acc_count)/len(pred)
     print 'accuracy is : ' + str(accuracy)
