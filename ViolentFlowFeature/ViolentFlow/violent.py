@@ -79,4 +79,4 @@ class VioFlow:
         return frame_hist
 
     def writeFeatureToFile(self,filename):
-	np.savetxt(filename, self.getFeatureVector(), delimiter=',')
+	   np.savetxt(filename, self.getFeatureVector(), delimiter=',')
