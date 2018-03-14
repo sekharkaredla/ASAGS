@@ -1,6 +1,5 @@
 from keras.models import Sequential
 from keras.layers import Dense
-from keras.utils.vis_utils import plot_model
 from sklearn.metrics import confusion_matrix
 import numpy as np
 import random
@@ -77,9 +76,6 @@ model.fit(X_train, Y_train, epochs=150, batch_size=2,  verbose=0)
 predictions = model.predict(X_test)
 
 pred = [round(x[0]) for x in predictions]
-
-plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
-
 
 acc_count = 0
 for k in range(0,len(pred)):
