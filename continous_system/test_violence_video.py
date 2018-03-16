@@ -13,7 +13,7 @@ json_file.close()
 model = model_from_json(loaded_model_json)
 model.load_weights("model_100.h5")
 
-video_name = 'test.avi'
+video_name = 'testNV1.avi'
 
 vid = PreProcess()
 vid.read_video(video_name)
@@ -40,23 +40,23 @@ def getBlockHist(flow_video):
     return count_of_bins/np.sum(count_of_bins)
 
 def getFrameHist(flow_video_size):
-	global temp_flows,index
-	flow_video = np.zeros(flow_video_size,dtype=np.float64)
-	for each_flow in temp_flows:
-	    flow_video = flow_video + each_flow
-	flow_video = flow_video / index
-	index = 0
-	temp_flows = []
-	height = flow_video.shape[0]
-	width = flow_video.shape[1]
-	B_height = int(math.floor((height - 11)/4))
-	B_width = int(math.floor((width - 11)/4))
-	frame_hist = []
-	for y in range(6,height-B_height-5,B_height):
-	    for x in range(6,width-B_width-5,B_width):
-	        block_hist = getBlockHist(flow_video[y:y+B_height-1,x:x+B_width-1])
-	        frame_hist = np.append(frame_hist,block_hist,axis = 0)
-	return frame_hist
+    global temp_flows,index
+    flow_video = np.zeros(flow_video_size,dtype=np.float64)
+    for each_flow in temp_flows:
+        flow_video = flow_video + each_flow
+    flow_video = flow_video / index
+    index = 0
+    temp_flows = []
+    height = flow_video.shape[0]
+    width = flow_video.shape[1]
+    B_height = int(math.floor((height - 11)/4))
+    B_width = int(math.floor((width - 11)/4))
+    frame_hist = []
+    for y in range(6,height-B_height-5,B_height):
+        for x in range(6,width-B_width-5,B_width):
+            block_hist = getBlockHist(flow_video[y:y+B_height-1,x:x+B_width-1])
+            frame_hist = np.append(frame_hist,block_hist,axis = 0)
+    return frame_hist
 
 
 for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_GAP):
