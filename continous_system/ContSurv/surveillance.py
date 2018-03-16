@@ -17,6 +17,7 @@ class ContinousSurv:
         self.vid = PreProcess()
         self.vid.read_video('testNV1.avi')
         self.vid.setVideoDimension(100)
+        self.flow = OptFlow()
         self.height = 0
         self.width = 0
         self.B_height = 0
@@ -46,19 +47,19 @@ class ContinousSurv:
     	self.temp_flows = []
     	self.height = flow_video.shape[0]
     	self.width = flow_video.shape[1]
-    	self.B_height = int(math.floor((height - 11)/4))
-    	self.B_width = int(math.floor((width - 11)/4))
+    	self.B_height = int(math.floor((self.height - 11)/4))
+    	self.B_width = int(math.floor((self.width - 11)/4))
     	frame_hist = []
     	for y in range(6,self.height-self.B_height-4,self.B_height):
     	    for x in range(6,self.width-self.B_width-4,self.B_width):
-    	        block_hist = getBlockHist(flow_video[y:y+B_height,x:x+B_width])
+    	        block_hist = self.getBlockHist(flow_video[y:y+self.B_height,x:x+self.B_width])
     	        frame_hist = np.append(frame_hist,block_hist,axis = 0)
     	return frame_hist
 
-    def doSurveillance(self):
+    def doSurveillanceFromVideo(self):
         while True:
-            # try:
-                frames = self.vid.getFramesFromSource()
+            try:
+                frames = self.vid.getFramesFromVideoSource()
                 PREV_F = frames[0]
                 CURRENT_F = frames[1]
                 NEXT_F = frames[2]
@@ -81,12 +82,12 @@ class ContinousSurv:
                 threshold = np.mean(change_mag , dtype=np.float64)
                 self.temp_flows.append(np.where(change_mag < threshold,0,binary_mag))
 
-                if index>9:
+                if self.index>9:
                     vif = self.getFrameHist(CURRENT_F.shape)
-                    X_frame = np.empty((0,252))
+                    X_frame = np.empty((0,336))
                     vif = np.reshape(vif, (-1, vif.shape[0]))
                     X_frame = np.vstack((X_frame, vif))
                     pred = self.model.predict(X_frame)
                     print pred
-            # except:
-            #     break
+            except:
+                break

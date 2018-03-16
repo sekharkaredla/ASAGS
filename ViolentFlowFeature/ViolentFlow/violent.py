@@ -72,9 +72,9 @@ class VioFlow:
     def getFeatureVector(self):
         frame_hist = []
         flow_video = self.getViolentFlow()
-        for y in range(6,self.height-self.B_height-5,self.B_height):
-            for x in range(6,self.width-self.B_width-5,self.B_width):
-                block_hist = self.getBlockHist(flow_video[y:y+self.B_height-1,x:x+self.B_width-1])
+        for y in range(6,self.height-self.B_height-4,self.B_height):
+            for x in range(6,self.width-self.B_width-4,self.B_width):
+                block_hist = self.getBlockHist(flow_video[y:y+self.B_height,x:x+self.B_width])
                 frame_hist = np.append(frame_hist,block_hist,axis = 0)
         return frame_hist
 

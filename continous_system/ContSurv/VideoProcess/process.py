@@ -24,6 +24,7 @@ class PreProcess:
         self.total_frames = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
         self.fps = self.cap.get(cv2.CAP_PROP_FPS)
         self.time = self.total_frames / self.fps
+        # self.last_frame = self.read_frame()
 
     def getFrameFromIndex(self,frame_no):
         #Number 2 defines flag CV_CAP_PROP_POS_FRAMES which is a 0-based index of the frame to be decoded/captured next.
@@ -56,27 +57,37 @@ class PreProcess:
 
     def read_frame(self):
         ret , frame = self.cap.read()
-        self.frame_number += 1
-
         return frame
 
-    def getFramesFromSource(self):
-        frame1 = self.read_frame()
+    def getFramesFromVideoSource(self):
+        # frame1 = self.last_frame
+        #
+        # for i in range(0,self.MOVEMENT_INTERVAL-1):
+        #     self.read_frame()
+        #
+        # frame2 = self.read_frame()
+        #
+        # for i in range(0,self.MOVEMENT_INTERVAL-1):
+        #     self.read_frame()
+        #
+        # frame3 = self.read_frame()
+        # self.last_frame = frame3
+        #
+        # frame1 = cv2.cvtColor(frame1,cv2.COLOR_BGR2GRAY)
+        # frame2 = cv2.cvtColor(frame2,cv2.COLOR_BGR2GRAY)
+        # frame3 = cv2.cvtColor(frame3,cv2.COLOR_BGR2GRAY)
+        #
+        # frames = (frame1,frame2,frame3,self.frame_number)
+        #
+        # self.frame_number += 6
+        #
+        # return frames
 
-        for i in range(0,self.MOVEMENT_INTERVAL-1):
-            frame = self.read_frame()
+        PREV_F = self.getFrameFromIndex(self.frame_number)
+        CURRENT_F = self.getFrameFromIndex(self.frame_number + self.MOVEMENT_INTERVAL)
+        NEXT_F = self.getFrameFromIndex(self.frame_number + (2 * self.MOVEMENT_INTERVAL))
 
-        frame2 = self.read_frame
-
-        for i in range(0,self.MOVEMENT_INTERVAL-1):
-            frame = self.read_frame()
-
-        frame3 = self.read_frame()
-
-        frame1 = cv2.cvtColor(frame1,cv2.COLOR_BGR2GRAY)
-        frame2 = cv2.cvtColor(frame2,cv2.COLOR_BGR2GRAY)
-        frame3 = cv2.cvtColor(frame3,cv2.COLOR_BGR2GRAY)
-
-        frames = (frame1,frame2,frame3,self.frame_number)
+        frames = (PREV_F,CURRENT_F,NEXT_F,self.frame_number)
+        self.frame_number += 6
 
         return frames

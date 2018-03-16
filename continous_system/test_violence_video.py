@@ -52,14 +52,20 @@ def getFrameHist(flow_video_size):
     B_height = int(math.floor((height - 11)/4))
     B_width = int(math.floor((width - 11)/4))
     frame_hist = []
-    for y in range(6,height-B_height-5,B_height):
-        for x in range(6,width-B_width-5,B_width):
-            block_hist = getBlockHist(flow_video[y:y+B_height-1,x:x+B_width-1])
+    # for 252
+    # for y in range(6,height-B_height-5,B_height):
+    #     for x in range(6,width-B_width-5,B_width):
+    #         block_hist = getBlockHist(flow_video[y:y+B_height-1,x:x+B_width-1])
+    #         frame_hist = np.append(frame_hist,block_hist,axis = 0)
+    # for 336
+    for y in range(6,height-B_height-4,B_height):
+        for x in range(6,width-B_width-4,B_width):
+            block_hist = getBlockHist(flow_video[y:y+B_height,x:x+B_width])
             frame_hist = np.append(frame_hist,block_hist,axis = 0)
     return frame_hist
 
 
-for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_GAP):
+for each_frame_index in range(0,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_GAP):
 
     PREV_F = vid.getFrameFromIndex(each_frame_index)
     CURRENT_F = vid.getFrameFromIndex(each_frame_index + vid.MOVEMENT_INTERVAL)
@@ -84,7 +90,7 @@ for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_G
 
     if index > 9:
         vif = getFrameHist(CURRENT_F.shape)
-        X_frame = np.empty((0,252))
+        X_frame = np.empty((0,336))
         vif = np.reshape(vif, (-1, vif.shape[0]))
         X_frame = np.vstack((X_frame, vif))
         pred = model.predict(X_frame)
