@@ -5,8 +5,15 @@ import numpy as np
 from VideoProcess import PreProcess
 from OpticalFlow import OptFlow
 import math
+from keras.models import model_from_json
 
-video_name = 'test1.avi'
+json_file = open('model_100.json', 'r')
+loaded_model_json = json_file.read()
+json_file.close()
+model = model_from_json(loaded_model_json)
+model.load_weights("model_100.h5")
+
+video_name = 'test.avi'
 
 vid = PreProcess()
 vid.read_video(video_name)
@@ -54,28 +61,31 @@ def getFrameHist(flow_video_size):
 
 for each_frame_index in range(3,vid.total_frames - vid.FRAME_GAP - 5,vid.FRAME_GAP):
 
-	PREV_F = vid.getFrameFromIndex(each_frame_index)
-	CURRENT_F = vid.getFrameFromIndex(each_frame_index + vid.MOVEMENT_INTERVAL)
-	NEXT_F = vid.getFrameFromIndex(each_frame_index + (2 * vid.MOVEMENT_INTERVAL))
+    PREV_F = vid.getFrameFromIndex(each_frame_index)
+    CURRENT_F = vid.getFrameFromIndex(each_frame_index + vid.MOVEMENT_INTERVAL)
+    NEXT_F = vid.getFrameFromIndex(each_frame_index + (2 * vid.MOVEMENT_INTERVAL))
 
-	PREV_F = vid.resize_frame(PREV_F)
-	CURRENT_F = vid.resize_frame(CURRENT_F)
-	NEXT_F = vid.resize_frame(NEXT_F)
+    PREV_F = vid.resize_frame(PREV_F)
+    CURRENT_F = vid.resize_frame(CURRENT_F)
+    NEXT_F = vid.resize_frame(NEXT_F)
 
-	(vx1,vy1,w1) = flow.sorFlow(PREV_F,CURRENT_F)
-	(vx2,vy2,w2) = flow.sorFlow(CURRENT_F,NEXT_F)
+    (vx1,vy1,w1) = flow.sorFlow(PREV_F,CURRENT_F)
+    (vx2,vy2,w2) = flow.sorFlow(CURRENT_F,NEXT_F)
 
-	m1 = flow.getFlowMagnitude(vx1,vy1)
-	index = index + 1
-	m2 = flow.getFlowMagnitude(vx2,vy2)
-
-
-	change_mag = abs(m2-m1)
-	binary_mag = np.ones(change_mag.shape,dtype=np.float64)
-	threshold = np.mean(change_mag , dtype=np.float64)
-	temp_flows.append(np.where(change_mag < threshold,0,binary_mag))
-
-	if index > 9:
-		print getFrameHist(CURRENT_F.shape)
+    m1 = flow.getFlowMagnitude(vx1,vy1)
+    index = index + 1
+    m2 = flow.getFlowMagnitude(vx2,vy2)
 
 
+    change_mag = abs(m2-m1)
+    binary_mag = np.ones(change_mag.shape,dtype=np.float64)
+    threshold = np.mean(change_mag , dtype=np.float64)
+    temp_flows.append(np.where(change_mag < threshold,0,binary_mag))
+
+    if index > 9:
+        vif = getFrameHist(CURRENT_F.shape)
+        X_frame = np.empty((0,252))
+        vif = np.reshape(vif, (-1, vif.shape[0]))
+        X_frame = np.vstack((X_frame, vif))
+        pred = model.predict(X_frame)
+        print pred
