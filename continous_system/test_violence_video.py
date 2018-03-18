@@ -13,7 +13,7 @@ json_file.close()
 model = model_from_json(loaded_model_json)
 model.load_weights("model_100.h5")
 
-video_name = 'testNV1.avi'
+video_name = 'testV1.avi'
 
 vid = PreProcess()
 vid.read_video(video_name)
