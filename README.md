@@ -7,3 +7,4 @@ Using completely open source technologies <br/>
 * Scipy
 * Bob Platform for Machine Learning and Signal Processing
 * SciKit - Learn
+* Keras - Tensorflow
