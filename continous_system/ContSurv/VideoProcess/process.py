@@ -1,5 +1,6 @@
 import numpy
 import cv2
+import sys
 
 class PreProcess:
     def __init__(self):
@@ -31,6 +32,8 @@ class PreProcess:
         #The second argument defines the frame number in range 0.0-1.0
         self.cap.set(1,frame_no)
         ret , img = self.cap.read()
+        if img is None:
+            sys.exit('Done')
         img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
         return img
 
@@ -82,7 +85,6 @@ class PreProcess:
         # self.frame_number += 6
         #
         # return frames
-
         PREV_F = self.getFrameFromIndex(self.frame_number)
         CURRENT_F = self.getFrameFromIndex(self.frame_number + self.MOVEMENT_INTERVAL)
         NEXT_F = self.getFrameFromIndex(self.frame_number + (2 * self.MOVEMENT_INTERVAL))

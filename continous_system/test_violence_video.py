@@ -7,6 +7,7 @@ from OpticalFlow import OptFlow
 import math
 from keras.models import model_from_json
 
+
 json_file = open('model_100.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()

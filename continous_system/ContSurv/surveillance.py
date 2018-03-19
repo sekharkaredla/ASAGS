@@ -6,7 +6,7 @@ import math
 from keras.models import model_from_json
 
 class ContinousSurv:
-    def __init__(self):
+    def __init__(self,video_name):
         json_file = open('model_100.json', 'r')
         loaded_model_json = json_file.read()
         json_file.close()
@@ -15,7 +15,7 @@ class ContinousSurv:
         print 'loaded model from disk'
 
         self.vid = PreProcess()
-        self.vid.read_video('testNV1.avi')
+        self.vid.read_video(video_name)
         self.vid.setVideoDimension(100)
         self.flow = OptFlow()
         self.height = 0
@@ -58,36 +58,33 @@ class ContinousSurv:
 
     def doSurveillanceFromVideo(self):
         while True:
-            try:
-                frames = self.vid.getFramesFromVideoSource()
-                PREV_F = frames[0]
-                CURRENT_F = frames[1]
-                NEXT_F = frames[2]
+            frames = self.vid.getFramesFromVideoSource()
+            PREV_F = frames[0]
+            CURRENT_F = frames[1]
+            NEXT_F = frames[2]
 
-                frame_number = frames[3]
+            frame_number = frames[3]
 
-                PREV_F = self.vid.resize_frame(PREV_F)
-                CURRENT_F = self.vid.resize_frame(CURRENT_F)
-                NEXT_F = self.vid.resize_frame(NEXT_F)
+            PREV_F = self.vid.resize_frame(PREV_F)
+            CURRENT_F = self.vid.resize_frame(CURRENT_F)
+            NEXT_F = self.vid.resize_frame(NEXT_F)
 
-                (vx1,vy1,w1) = self.flow.sorFlow(PREV_F,CURRENT_F)
-                (vx2,vy2,w2) = self.flow.sorFlow(CURRENT_F,NEXT_F)
+            (vx1,vy1,w1) = self.flow.sorFlow(PREV_F,CURRENT_F)
+            (vx2,vy2,w2) = self.flow.sorFlow(CURRENT_F,NEXT_F)
 
-                m1 = self.flow.getFlowMagnitude(vx1,vy1)
-                self.index = self.index + 1
-                m2 = self.flow.getFlowMagnitude(vx2,vy2)
+            m1 = self.flow.getFlowMagnitude(vx1,vy1)
+            self.index = self.index + 1
+            m2 = self.flow.getFlowMagnitude(vx2,vy2)
 
-                change_mag = abs(m2-m1)
-                binary_mag = np.ones(change_mag.shape,dtype=np.float64)
-                threshold = np.mean(change_mag , dtype=np.float64)
-                self.temp_flows.append(np.where(change_mag < threshold,0,binary_mag))
+            change_mag = abs(m2-m1)
+            binary_mag = np.ones(change_mag.shape,dtype=np.float64)
+            threshold = np.mean(change_mag , dtype=np.float64)
+            self.temp_flows.append(np.where(change_mag < threshold,0,binary_mag))
 
-                if self.index>9:
-                    vif = self.getFrameHist(CURRENT_F.shape)
-                    X_frame = np.empty((0,336))
-                    vif = np.reshape(vif, (-1, vif.shape[0]))
-                    X_frame = np.vstack((X_frame, vif))
-                    pred = self.model.predict(X_frame)
-                    print pred
-            except:
-                break
+            if self.index>9:
+                vif = self.getFrameHist(CURRENT_F.shape)
+                X_frame = np.empty((0,336))
+                vif = np.reshape(vif, (-1, vif.shape[0]))
+                X_frame = np.vstack((X_frame, vif))
+                pred = self.model.predict(X_frame)
+                print pred

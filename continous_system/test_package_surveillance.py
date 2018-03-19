@@ -1,3 +1,3 @@
 from ContSurv import ContinousSurv
-obj = ContinousSurv()
+obj = ContinousSurv('testNV1.avi')
 obj.doSurveillanceFromVideo()
