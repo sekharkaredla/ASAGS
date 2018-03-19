@@ -87,4 +87,8 @@ class ContinousSurv:
                 vif = np.reshape(vif, (-1, vif.shape[0]))
                 X_frame = np.vstack((X_frame, vif))
                 pred = self.model.predict(X_frame)
-                print pred
+                pred = round(pred[0][0])
+                if pred == 1:
+                    time_violence = float(frame_number) / self.vid.fps
+                    print 'violent  ---   '+str(time_violence)
+                
