@@ -4,9 +4,10 @@ from VideoProcess import PreProcess
 from OpticalFlow import OptFlow
 import math
 from keras.models import model_from_json
+import time
 
 class ContinousSurv:
-    def __init__(self,video_name):
+    def __init__(self):
         json_file = open('model_100.json', 'r')
         loaded_model_json = json_file.read()
         json_file.close()
@@ -15,7 +16,6 @@ class ContinousSurv:
         print 'loaded model from disk'
 
         self.vid = PreProcess()
-        self.vid.read_video(video_name)
         self.vid.setVideoDimension(100)
         self.flow = OptFlow()
         self.height = 0
@@ -25,6 +25,9 @@ class ContinousSurv:
         self.index = 0
         self.temp_flows = []
         self.bins = np.arange(0.0,1.05,0.05,dtype=np.float64)
+
+    def setVideoName(self,video_name):
+        self.vid.read_video(video_name)
 
     def histc(self,X, bins):
         map_to_bins = np.digitize(X,bins)
@@ -57,6 +60,8 @@ class ContinousSurv:
     	return frame_hist
 
     def doSurveillanceFromVideo(self):
+        FPS = round(self.vid.getFPS())
+        print 'FPS is : '+str(FPS)
         while True:
             frames = self.vid.getFramesFromVideoSource()
             PREV_F = frames[0]
@@ -81,7 +86,7 @@ class ContinousSurv:
             threshold = np.mean(change_mag , dtype=np.float64)
             self.temp_flows.append(np.where(change_mag < threshold,0,binary_mag))
 
-            if self.index>9:
+            if self.index>=int(FPS/3):
                 vif = self.getFrameHist(CURRENT_F.shape)
                 X_frame = np.empty((0,336))
                 vif = np.reshape(vif, (-1, vif.shape[0]))
@@ -91,4 +96,43 @@ class ContinousSurv:
                 if pred == 1:
                     time_violence = float(frame_number) / self.vid.fps
                     print 'violent  ---   '+str(time_violence)
-                
+
+    def doSurveillanceFromCamera(self):
+        start_time = time.time()
+        self.vid.useCamera()
+        FPS = round(self.vid.getFPS())
+        print 'FPS is :'+str(FPS)
+        while True:
+            frames = self.vid.getFramesFromCameraSource()
+            PREV_F = frames[0]
+            CURRENT_F = frames[1]
+            NEXT_F = frames[2]
+
+            time_now = frames[3]
+
+            PREV_F = self.vid.resize_frame(PREV_F)
+            CURRENT_F = self.vid.resize_frame(CURRENT_F)
+            NEXT_F = self.vid.resize_frame(NEXT_F)
+
+            (vx1,vy1,w1) = self.flow.sorFlow(PREV_F,CURRENT_F)
+            (vx2,vy2,w2) = self.flow.sorFlow(CURRENT_F,NEXT_F)
+
+            m1 = self.flow.getFlowMagnitude(vx1,vy1)
+            self.index = self.index + 1
+            m2 = self.flow.getFlowMagnitude(vx2,vy2)
+
+            change_mag = abs(m2-m1)
+            binary_mag = np.ones(change_mag.shape,dtype=np.float64)
+            threshold = np.mean(change_mag , dtype=np.float64)
+            self.temp_flows.append(np.where(change_mag < threshold,0,binary_mag))
+
+            if self.index>=int(FPS/3):
+                vif = self.getFrameHist(CURRENT_F.shape)
+                X_frame = np.empty((0,336))
+                vif = np.reshape(vif, (-1, vif.shape[0]))
+                X_frame = np.vstack((X_frame, vif))
+                pred = self.model.predict(X_frame)
+                print pred,time_now-start_time
+                pred = round(pred[0][0])
+                if pred == 1:
+                    print 'violent  ---   '+str(time_now - start_time)

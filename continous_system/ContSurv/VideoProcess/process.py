@@ -1,6 +1,7 @@
 import numpy
 import cv2
 import sys
+import time
 
 class PreProcess:
     def __init__(self):
@@ -49,11 +50,13 @@ class PreProcess:
 
     def useCamera(self):
         self.cap = cv2.VideoCapture(0)
+        self.last_frame = self.read_frame()
 
     def showInputFromCamera(self):
         while True:
             ret , frame = self.cap.read()
-            cv2.imshow('camera',frame)
+            cv2.imshow('camera_frame',frame)
+            cv2.imshow('resized_camera_frame',self.resize_frame(cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)))
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
@@ -61,6 +64,9 @@ class PreProcess:
     def read_frame(self):
         ret , frame = self.cap.read()
         return frame
+
+    def getFPS(self):
+        return self.cap.get(cv2.CAP_PROP_FPS)
 
     def getFramesFromVideoSource(self):
         # frame1 = self.last_frame
@@ -91,5 +97,31 @@ class PreProcess:
 
         frames = (PREV_F,CURRENT_F,NEXT_F,self.frame_number)
         self.frame_number += 6
+
+        return frames
+
+    def getFramesFromCameraSource(self):
+        frame1 = self.last_frame
+        for i in range(0,self.MOVEMENT_INTERVAL-1):
+            self.read_frame()
+        frame2 = self.read_frame()
+        for i in range(0,self.MOVEMENT_INTERVAL-1):
+            self.read_frame()
+        frame3 = self.read_frame()
+        self.last_frame = frame3
+
+        # cv2.imshow('camera_frame',frame2)
+
+        frame1 = self.resize_frame(frame1)
+        frame2 = self.resize_frame(frame2)
+        frame3 = self.resize_frame(frame3)
+
+        frame1 = cv2.cvtColor(frame1,cv2.COLOR_BGR2GRAY)
+        frame2 = cv2.cvtColor(frame2,cv2.COLOR_BGR2GRAY)
+        frame3 = cv2.cvtColor(frame3,cv2.COLOR_BGR2GRAY)
+
+        # cv2.imshow('resized_camera_frame',frame2)
+
+        frames = (frame1,frame2,frame3,time.time())
 
         return frames
