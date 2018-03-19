@@ -6,6 +6,7 @@ def resize_frame(frame):
     if rescale<0.8:
         dim = (100, int(frame.shape[0] * rescale))
         frame = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
+    frame = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     return frame
 
 
