@@ -95,7 +95,7 @@ class ContinousSurv:
                 pred = round(pred[0][0])
                 if pred == 1:
                     time_violence = float(frame_number) / self.vid.fps
-                    print 'violent  ---   '+str(round(time_violence))+' seconds'
+                    print 'violent  ---   '+str(int(time_violence))+' seconds'
 
     def doSurveillanceFromCamera(self):
         start_time = time.time()
