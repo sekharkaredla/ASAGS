@@ -1,4 +1,4 @@
-# Automated Surveillance and Alert Generation System
+# Real Time Analysis of Crowd Behaviour for Automatic and Accurate Surveillance
 **4th year Project**
 Using completely open source technologies <br/>
 * Python
