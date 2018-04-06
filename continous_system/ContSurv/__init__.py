@@ -1,1 +1,2 @@
-from surveillance import ContinousSurv 
+from surveillance import ContinousSurv
+from surveillance2 import ContinousSurv2

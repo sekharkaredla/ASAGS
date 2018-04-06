@@ -13,7 +13,7 @@ data_nonviolent = range(1,130)
 random.shuffle(data_violent)
 random.shuffle(data_nonviolent)
 
-for i in range(10,131,20):
+for i in range(20,131,20):
     X_train = np.empty((0,336))
     Y_train = np.array([])
     X_test = np.empty((0,336))
