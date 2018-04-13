@@ -14,6 +14,8 @@ Y_test = np.array([])
 count = 0
 data = range(1,130)
 random.shuffle(data)
+trained_list = []
+tested_list = []
 
 start_time = time.time()
 
@@ -28,9 +30,11 @@ for i in data:
         if count < 92:
             X_train = np.vstack((X_train,vif))
             Y_train = np.append(Y_train,0)
+	    trained_list.append(i)
         else:
             X_test = np.vstack((X_test,vif))
             Y_test = np.append(Y_test,0)
+	    tested_list.append(i)
         file_obj.close()
         count += 1
     except:
@@ -50,9 +54,11 @@ for i in data:
         if count < 92:
             X_train = np.vstack((X_train, vif))
             Y_train = np.append(Y_train, 1)
+	    trained_list.append(i)
         else:
             X_test = np.vstack((X_test, vif))
             Y_test = np.append(Y_test, 1)
+	    tested_list.append(i)
         file_obj.close()
         count += 1
     except:
@@ -94,3 +100,6 @@ print cm
 acc_cm = float(cm[0][0]+cm[1][1])/float(np.sum(cm))
 
 print acc_cm
+
+print trained_list
+print tested_list
