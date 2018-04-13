@@ -19,7 +19,8 @@ test = [70, 113, 12, 82, 78, 92, 23, 45, 80, 73, 120, 40, 27, 118, 69, 52, 88, 8
 
 for k in range(0,len(train)):
 	index = train[k]
-	if k < 93:
+	
+	if k < 92:
 		try:
         		file_name = 'violent_features_NON_VIOLENT/nonvio_' + str(index) + '.txt'
         		file_obj = open(file_name, 'r')
