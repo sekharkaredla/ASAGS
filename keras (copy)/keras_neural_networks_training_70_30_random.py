@@ -92,14 +92,19 @@ accuracy = float(acc_count)/len(pred)
 print 'accuracy is : ' + str(accuracy)
 print("--- %s seconds ---" % (time.time() - start_time))
 
-acc_cm = 0.0
+
 
 cm = confusion_matrix(Y_test,pred)
+print ""
+print "confusion matrix"
 print cm
 
-acc_cm = float(cm[0][0]+cm[1][1])/float(np.sum(cm))
+#acc_cm = float(cm[0][0]+cm[1][1])/float(np.sum(cm))
 
-print acc_cm
-
+#print acc_cm
+print ""
+print "trained videos list"
 print trained_list
+print ""
+print "tested videos list"
 print tested_list
